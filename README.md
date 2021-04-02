@@ -10,3 +10,11 @@ Before you run .exe file of program you need to:
 
 # UI
 UI in here is very simple. Winforms form have 50% transparent. Open in whole screen. In corner of screen you can notice robot wheels Speed indicator. That's all!
+
+# Control
+So, 
+WASD - wheels moving,
+Add for add Speed(1), Subtract for subtract Speed of robot, Multiply for invert Speed of robot,
+if you hold a left mouse button on screen you can control a hanger
+and L... that's L, just L (probably for debug).
+1 - Speed it's a indicator on UI, that means power of rotating robot wheels. It's have a range from -100 to 100 (minus just to invert a wheels direction)
