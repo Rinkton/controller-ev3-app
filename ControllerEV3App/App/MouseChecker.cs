@@ -12,6 +12,8 @@ namespace App
     {
         private MouseEventArgs previousMouse;
         private bool isStart = true;
+        private OutputPort hangerX = ConfigReader.GetOutputPort("hangerX-op");
+        private OutputPort hangerY = ConfigReader.GetOutputPort("hangerY-op");
 
         public void Main()
         {
@@ -84,9 +86,6 @@ namespace App
                 fx = Convert.ToInt32(f*1.5f * k);
                 t = vectorMouseMoving.Y / 25;
             }
-
-            OutputPort hangerX = ConfigReader.GetOutputPort("hangerX-op");
-            OutputPort hangerY = ConfigReader.GetOutputPort("hangerY-op");
 
             await BrickKeeper.BrickObj.DirectCommand.TurnMotorAtPowerAsync(hangerX, fx*kx);
             await BrickKeeper.BrickObj.DirectCommand.TurnMotorAtPowerAsync(hangerY, fy*ky);

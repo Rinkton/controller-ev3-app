@@ -14,6 +14,7 @@ namespace App
         [STAThread]
         static void Main()
         {
+            //TODO: Increase stack size.
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

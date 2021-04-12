@@ -31,7 +31,7 @@ namespace App
             BrickKeeper.BrickObj = brick;
             BrickKeeper.BrickObj.BrickChanged += brickChanged;
 
-            await BrickKeeper.BrickObj.ConnectAsync(new TimeSpan(1000));//TODO: On connect
+            await BrickKeeper.BrickObj.ConnectAsync(TimeSpan.Zero);//TODO: On connect
 
             await BrickKeeper.BrickObj.DirectCommand.PlayToneAsync(3, 200, 300);
 
