@@ -17,20 +17,22 @@ namespace App
 
         public void Main()
         {
-            while (!KeyKeeper.MouseDown)
+            while (true)
             {
-                isStart = true;
+                while (!KeyKeeper.MouseDown)
+                {
+                    isStart = true;
+                }
+                if (isStart)
+                {
+                    previousMouse = new MouseEventArgs(MouseButtons.None, 0, FormKeeper.Form.Mouse.X, FormKeeper.Form.Mouse.Y, 0);
+                    isStart = false;
+                }
+                Vector vectorMouseMoving = getVectorMouseMoving();
+                renameMePlease(vectorMouseMoving);
+                previousMouse = FormKeeper.Form.Mouse;
+                System.Threading.Thread.Sleep(1);
             }
-            if (isStart)
-            {
-                previousMouse = new MouseEventArgs(MouseButtons.None, 0, FormKeeper.Form.Mouse.X, FormKeeper.Form.Mouse.Y, 0);
-                isStart = false;
-            }
-            Vector vectorMouseMoving = getVectorMouseMoving();
-            renameMePlease(vectorMouseMoving);
-            previousMouse = FormKeeper.Form.Mouse;
-            System.Threading.Thread.Sleep(1);
-            Main();
         }
 
         private Vector getVectorMouseMoving()
